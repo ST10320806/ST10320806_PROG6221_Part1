@@ -14,8 +14,7 @@ namespace ST10320806_PROG6221_Part1.Classes
         public List<string> Steps { get; set; } = new List<string>();//Declaring an array for the storage of steps;
 
         public List<int> sFactor { get; set; } = new List<int>();//Declaring an array in which the scale factor will be stored
-                                                                 //public string Step {  get; set; }
-                                                                 //public string ingredient { get; set; }
+                                                                 
 
         public void addRecipe()//Method for adding a recipe
         {
