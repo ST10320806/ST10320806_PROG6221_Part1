@@ -4,6 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+/// <summary>
+/// Jesse Weeder
+/// ST10320806
+/// Module PROG6221
+/// </summary>
 
 namespace ST10320806_PROG6221_Part1
 {
@@ -11,13 +16,14 @@ namespace ST10320806_PROG6221_Part1
     {
         static void Main(string[] args)
         {
-            RecipeManager rec1 = new RecipeManager();
+            RecipeManager rec1 = new RecipeManager();//created an instance of the RecipeManager class
             
 
             bool exit = false;
 
-            while (!exit)
+            while (!exit)// while loop which creates the menu
             {
+                //Different options the user can select
                 Console.WriteLine("Welcome to Recipe Manager!");
                 Console.WriteLine("1. Add a new recipe");
                 Console.WriteLine("2. Display recipe");
@@ -28,7 +34,7 @@ namespace ST10320806_PROG6221_Part1
                 
 
                 Console.Write("Please enter your choice: ");
-                string choice = Console.ReadLine();
+                string choice = Console.ReadLine();// capturing the users input
 
                 switch (choice)
                 {
@@ -41,6 +47,7 @@ namespace ST10320806_PROG6221_Part1
                     case "3":
                         Console.WriteLine("\nEnter scaling factor:");
                         int scaleFactor = Convert.ToInt32(Console.ReadLine());
+                        //Capturing the scale factor
                         rec1.ScaleRecipe(scaleFactor);
                         break;
                     case "4":
@@ -63,7 +70,7 @@ namespace ST10320806_PROG6221_Part1
 
 
             Console.WriteLine("Press any key to exit application");
-            Console.ReadKey();
+            Console.ReadKey();// tool for exiting the application
         }
     }
 }
