@@ -52,11 +52,21 @@ namespace ST10320806_PROG6221_Part1
                             rec1.ScaleRecipe(scaleFactor);
                         break;
                     case "4":
+                       
+                            rec1.ResetQuantities();
                         
-                        rec1.ResetQuantities();
                         break;
                     case "5":
+                    Console.WriteLine("Are you sure you want to clear the recipes?: \n (Enter y or n)");
+                    string selection = Console.ReadLine();
+                    if (selection == "y")
+                    {
                         rec1.ClearRecipes();
+                        }
+                        else if (selection == "n")
+                        {
+                            Console.WriteLine("Operation canceled");
+                        }
                         break;
                     case "6":
                         exit = true;

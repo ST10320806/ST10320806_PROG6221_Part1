@@ -133,7 +133,7 @@ namespace ST10320806_PROG6221_Part1.Classes
                 string ingredient = Ingredients[i];
                 string[] parts = ingredient.Split(' ');
 
-                if (int.TryParse(parts[0], out int quantity))
+                if (int.TryParse(parts[0], out int quantity))//re-worked from code provided by Claude AI: https://claude.ai/chats
                 {
                     string unit = parts[1];
                     string name = string.Join(" ", parts, 3, parts.Length - 3); 
