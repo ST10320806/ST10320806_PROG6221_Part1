@@ -45,11 +45,11 @@ namespace ST10320806_PROG6221_Part1
                     case "2":
                         rec1.DisplayRecipe();
                         break;
-                    case "3":
-                        Console.WriteLine("\nEnter scaling factor:");
-                        int scaleFactor = Convert.ToInt32(Console.ReadLine());
-                        //Capturing the scale factor
-                        rec1.ScaleRecipe(scaleFactor);
+                    case "3": 
+                            Console.WriteLine("\nEnter scaling factor:");
+                            int scaleFactor = Convert.ToInt32(Console.ReadLine());
+                            //Capturing the scale factor
+                            rec1.ScaleRecipe(scaleFactor);
                         break;
                     case "4":
                         
