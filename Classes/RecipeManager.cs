@@ -103,9 +103,6 @@ namespace ST10320806_PROG6221_Part1.Classes
                 string ingredient = Ingredients[i];
                 string[] parts = ingredient.Split(' ');
 
-
-
-                // Extracting quantity, unit, and name from the ingredient string
                 if (int.TryParse(parts[0], out int quantity))
                 {
                     string unit = parts[1];
@@ -133,11 +130,9 @@ namespace ST10320806_PROG6221_Part1.Classes
 
             for (int i = 0; i < Ingredients.Count; i++)//For loop to iterate through each ingredient
             {
-                // Splitting ingredient string into parts
                 string ingredient = Ingredients[i];
                 string[] parts = ingredient.Split(' ');
 
-                // Extracting quantity, unit, and name to enure that only the quantity is changed
                 if (int.TryParse(parts[0], out int quantity))
                 {
                     string unit = parts[1];
