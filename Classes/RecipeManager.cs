@@ -43,24 +43,32 @@ namespace ST10320806_PROG6221_Part1.Classes
 
 
                 }
-                Console.WriteLine("Enter amount of steps: ");
-                int steps = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Enter the steps: ");
-                for (int i = 0; i < steps; i++)//for loop runs for the amount of steps the user would like to enter
+                try
                 {
-                    Console.WriteLine($"Step {i + 1}:");//iteration for the steps
+                    Console.WriteLine("Enter amount of steps: ");
+                    int steps = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Enter the steps: ");
+                    for (int i = 0; i < steps; i++)//for loop runs for the amount of steps the user would like to enter
+                    {
+                        Console.WriteLine($"Step {i + 1}:");//iteration for the steps
 
 
-                    string Step = Console.ReadLine().Trim();
-                    Steps.Add(Step);// adding the steps to the array
+                        string Step = Console.ReadLine().Trim();
+                        Steps.Add(Step);// adding the steps to the array
+                    }
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Invalid input, please try again");
+                    addRecipe();
                 }
                 Console.WriteLine("RECIPE SUCCESSFULLY CAPTURED\n*****************************************");
             }
 
-            catch (FormatException)
+            catch (FormatException)// exception handling to make sure the user enters a valid number
             {
                 Console.WriteLine("Invalid input. Please enter a valid number.");
-                addRecipe(); // Recursive call to retry the method if there's an exception
+                addRecipe(); //calling method so that user can retry in case of an exception
             }
         }
 
