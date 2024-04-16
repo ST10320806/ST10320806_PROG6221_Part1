@@ -14,49 +14,57 @@ namespace ST10320806_PROG6221_Part1.Classes
         public List<string> Steps { get; set; } = new List<string>();//Declaring an array for the storage of steps;
 
         public List<int> sFactor { get; set; } = new List<int>();//Declaring an array in which the scale factor will be stored
-        //public string Step {  get; set; }
-        //public string ingredient { get; set; }
-       
+                                                                 //public string Step {  get; set; }
+                                                                 //public string ingredient { get; set; }
+
         public void addRecipe()//Method for adding a recipe
         {
             Console.WriteLine("\n*****************************************\nENTERING A RECIPE: ");
-            
-            Console.WriteLine("Enter the number of ingredients you would like to enter");
-            int iAmount = Convert.ToInt32(Console.ReadLine());
-            for (int i = 0; i < iAmount; i++)//For loop which runs for the amount of ingredients the user would like to enter
+            try
             {
-                
-
-                Console.WriteLine($"Ingredient {i + 1}:");//Iterates the ingredient number
-
-                Console.WriteLine("Enter Ingredient Name: ");
-                string iName = Console.ReadLine();
-                Console.WriteLine("Enter ingredient quantity");
-                int iQuantity = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Enter unit of measurement: ");
-                string uMeasurement = Console.ReadLine();
-                //Code for the capture of recipe details from user input
-
-               string ingredient = $"{iQuantity} {uMeasurement} of {iName}";//string manipulation to provide a format for the ingredients
-                Ingredients.Add(ingredient);//adding the ingredients to the array
+                Console.WriteLine("Enter the number of ingredients you would like to enter");
+                int iAmount = Convert.ToInt32(Console.ReadLine());
+                for (int i = 0; i < iAmount; i++)//For loop which runs for the amount of ingredients the user would like to enter
+                {
 
 
+                    Console.WriteLine($"Ingredient {i + 1}:");//Iterates the ingredient number
+
+                    Console.WriteLine("Enter Ingredient Name: ");
+                    string iName = Console.ReadLine();
+                    Console.WriteLine("Enter ingredient quantity");
+                    int iQuantity = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Enter unit of measurement: ");
+                    string uMeasurement = Console.ReadLine();
+                    //Code for the capture of recipe details from user input
+
+                    string ingredient = $"{iQuantity} {uMeasurement} of {iName}";//string manipulation to provide a format for the ingredients
+                    Ingredients.Add(ingredient);//adding the ingredients to the array
+
+
+                }
+                Console.WriteLine("Enter amount of steps: ");
+                int steps = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter the steps: ");
+                for (int i = 0; i < steps; i++)//for loop runs for the amount of steps the user would like to enter
+                {
+                    Console.WriteLine($"Step {i + 1}:");//iteration for the steps
+
+
+                    string Step = Console.ReadLine().Trim();
+                    Steps.Add(Step);// adding the steps to the array
+                }
+                Console.WriteLine("RECIPE SUCCESSFULLY CAPTURED\n*****************************************");
             }
-            Console.WriteLine("Enter amount of steps: ");
-            int steps = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter the steps: ");
-            for (int i = 0; i < steps; i++)//for loop runs for the amount of steps the user would like to enter
+
+            catch (FormatException)
             {
-                Console.WriteLine($"Step {i + 1}:");//iteration for the steps
-
-
-                string Step = Console.ReadLine().Trim();
-                Steps.Add(Step);// adding the steps to the array
+                Console.WriteLine("Invalid input. Please enter a valid number.");
+                addRecipe(); // Recursive call to retry the method if there's an exception
             }
-            Console.WriteLine("RECIPE SUCCESSFULLY CAPTURED\n*****************************************");
         }
 
-        public void DisplayRecipe()// method for the display of the recipe
+    public void DisplayRecipe()// method for the display of the recipe
         {
             Console.ForegroundColor = ConsoleColor.Yellow;//Changing the text colour of the displayed recipe
             Console.WriteLine("\nFull Recipe: \n------------------------------------------------");
