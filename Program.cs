@@ -24,8 +24,9 @@ namespace ST10320806_PROG6221_Part1
             while (!exit)// while loop which creates the menu
             {
                 //Different options the user can select
-                Console.WriteLine("Welcome to Recipe Manager!");
-                Console.WriteLine("1. Add a new recipe");
+                Console.WriteLine("WELCOME TO THE RECIPE MANAGER!");
+                Console.WriteLine("What would you like to do?");
+                Console.WriteLine("\n1. Add a new recipe");
                 Console.WriteLine("2. Display recipe");
                 Console.WriteLine("3. Scale recipe");
                 Console.WriteLine("4. Reset recipe quantities");
