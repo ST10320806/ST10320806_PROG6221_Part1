@@ -59,7 +59,7 @@ namespace ST10320806_PROG6221_Part1.Classes
         public void DisplayRecipe()// method for the display of the recipe
         {
             Console.ForegroundColor = ConsoleColor.Yellow;//Changing the text colour of the displayed recipe
-            Console.WriteLine("Full Recipe: \n------------------------------------------------");
+            Console.WriteLine("\nFull Recipe: \n------------------------------------------------");
             Console.WriteLine("Ingredients:");
             foreach (var ingredient in Ingredients)
             {
@@ -97,14 +97,14 @@ namespace ST10320806_PROG6221_Part1.Classes
                     int sQuantity = quantity * scaleFactor;//multiplying the quantity by the scale factor
                     Ingredients[i] = $"{sQuantity} {unit} of {name}";// displaying the new scaled ingredients in the correct format
                 }
-                
+            }
 
-                Console.WriteLine("Recipe scaled successfully.");
+                Console.WriteLine("\nRecipe scaled successfully.");
                 Console.WriteLine("Scaled Recipe: \n**********************************************");
                 DisplayRecipe();//Displaying the scaled recipe
                 Console.WriteLine("**********************************************");
 
-            }
+            
         }
 
 
@@ -132,8 +132,8 @@ namespace ST10320806_PROG6221_Part1.Classes
                 
             }
 
-            Console.WriteLine("Quantities reset successfully.");
-            Console.WriteLine("Reset Quantity: ");
+            Console.WriteLine("\nQuantities reset successfully.");
+            Console.WriteLine("Reset recipe: ");
             DisplayRecipe();//displaying the new reset recipe
         }
 
@@ -142,7 +142,7 @@ namespace ST10320806_PROG6221_Part1.Classes
             Ingredients.Clear();//clearing the ingredients array
             Steps.Clear();//clearing the steps array
             sFactor.Clear();//clearing the sFactor array
-            Console.WriteLine("Recipe has been reset");
+            Console.WriteLine("\nRecipe has been reset");
             addRecipe();//prompting the user to add another recipe by calling the addRecipe method
         }
     }
