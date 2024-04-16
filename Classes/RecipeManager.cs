@@ -73,7 +73,7 @@ namespace ST10320806_PROG6221_Part1.Classes
 
     public void DisplayRecipe()// method for the display of the recipe
         {
-            Console.ForegroundColor = ConsoleColor.Yellow;//Changing the text colour of the displayed recipe
+            Console.ForegroundColor = ConsoleColor.Yellow;//Changing the text colour of the displayed recipe. Adapted from code taken from: https://www.tutorialspoint.com/how-to-change-the-foreground-color-of-text-in-chash-console
             Console.WriteLine("\nFull Recipe: \n------------------------------------------------");
             Console.WriteLine("Ingredients:");
             foreach (var ingredient in Ingredients)
