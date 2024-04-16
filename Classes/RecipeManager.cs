@@ -100,9 +100,10 @@ namespace ST10320806_PROG6221_Part1.Classes
             {
                 // Splitting the ingredient string into parts so that only the quantity is changed
                 string ingredient = Ingredients[i];
-                string[] parts = ingredient.Split(' ');
+                //storing the different parts of the ingredient string
+                string[] parts = ingredient.Split(' ');//adapted from code taken from: https://ironpdf.com/blog/net-help/csharp-split-string-guide/#:~:text=In%20C%23%2C%20the%20String.,based%20on%20a%20given%20separator.
 
-                if (int.TryParse(parts[0], out int quantity))
+                if (int.TryParse(parts[0], out int quantity))//making sure quantity is the first part of the string
                 {
                     string unit = parts[1];
                     string name = string.Join(" ", parts, 3, parts.Length - 3);
