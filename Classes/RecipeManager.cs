@@ -56,7 +56,7 @@ namespace ST10320806_PROG6221_Part1.Classes
                         Steps.Add(Step);// adding the steps to the array
                     }
                 }
-                catch (FormatException)
+                catch (FormatException)// re-worked from code provided by chatGPT: https://chat.openai.com/
                 {
                     Console.WriteLine("Invalid input, please try again");
                     addRecipe();
@@ -103,7 +103,7 @@ namespace ST10320806_PROG6221_Part1.Classes
                 //storing the different parts of the ingredient string
                 string[] parts = ingredient.Split(' ');//adapted from code taken from: https://ironpdf.com/blog/net-help/csharp-split-string-guide/#:~:text=In%20C%23%2C%20the%20String.,based%20on%20a%20given%20separator.
 
-                if (int.TryParse(parts[0], out int quantity))//making sure quantity is the first part of the string
+                if (int.TryParse(parts[0], out int quantity))//making sure quantity is the first part of the string(Re-worked from code provided by Claude AI: https://claude.ai/chats)
                 {
                     string unit = parts[1];
                     string name = string.Join(" ", parts, 3, parts.Length - 3);
