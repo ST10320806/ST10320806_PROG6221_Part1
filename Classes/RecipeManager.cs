@@ -97,10 +97,7 @@ namespace ST10320806_PROG6221_Part1.Classes
                     int sQuantity = quantity * scaleFactor;//multiplying the quantity by the scale factor
                     Ingredients[i] = $"{sQuantity} {unit} of {name}";// displaying the new scaled ingredients in the correct format
                 }
-                else
-                {
-                    Console.WriteLine($"Invalid quantity in ingredient: {ingredient}");
-                }
+                
 
                 Console.WriteLine("Recipe scaled successfully.");
                 Console.WriteLine("Scaled Recipe: \n**********************************************");
@@ -132,10 +129,7 @@ namespace ST10320806_PROG6221_Part1.Classes
                     int originalQuantity = quantity / scaleFactor;// resetting the quantity by simply dividing the new quantity by the scale factor
                     Ingredients[i] = $"{originalQuantity} {unit} of {name}";//displaying the new reset ingredients in teh correct format
                 }
-                else
-                {
-                    Console.WriteLine($"Invalid quantity in ingredient: {ingredient}");
-                }
+                
             }
 
             Console.WriteLine("Quantities reset successfully.");
