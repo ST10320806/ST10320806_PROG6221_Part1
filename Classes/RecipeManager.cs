@@ -111,11 +111,6 @@ namespace ST10320806_PROG6221_Part1.Classes
 
         public void ResetQuantities()
     {
-            if(sFactor.Count == 0)
-            {
-                Console.WriteLine("No scaling factor available to reset quantities.");
-                return;
-            }
 
             int scaleFactor = sFactor[sFactor.Count - 1]; // Get the last scaling factor
 
@@ -131,12 +126,8 @@ namespace ST10320806_PROG6221_Part1.Classes
                 if (int.TryParse(parts[0], out int quantity))
                 {
                     string unit = parts[1];
-                    string name = string.Join(" ", parts, 3, parts.Length - 3); // Join remaining parts as name
-
-                    // Calculate original quantity by dividing scaled quantity by scaleFactor
+                    string name = string.Join(" ", parts, 3, parts.Length - 3); 
                     int originalQuantity = quantity / scaleFactor;
-
-                    // Update ingredient string with original quantity
                     Ingredients[i] = $"{originalQuantity} {unit} of {name}";
                 }
                 else
