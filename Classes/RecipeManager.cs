@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ST10320806_PROG6221_Part1.Classes
@@ -73,11 +74,8 @@ namespace ST10320806_PROG6221_Part1.Classes
 
         public void ScaleRecipe(int scaleFactor)
         {
-
-
-            Console.WriteLine($"\nScaling recipe by a factor of {scaleFactor}...");
             sFactor.Add(scaleFactor);
-            
+
 
             for (int i = 0; i < Ingredients.Count; i++)
             {
@@ -85,35 +83,33 @@ namespace ST10320806_PROG6221_Part1.Classes
                 string ingredient = Ingredients[i];
                 string[] parts = ingredient.Split(' ');
 
-                
+
 
                 // Extract quantity, unit, and name
                 if (int.TryParse(parts[0], out int quantity))
                 {
                     string unit = parts[1];
-                    string name = string.Join(" ", parts, 3, parts.Length - 3); // Join remaining parts as name
-
-                    // Calculate scaled quantity
+                    string name = string.Join(" ", parts, 3, parts.Length - 3);
                     int sQuantity = quantity * scaleFactor;
-
-                    // Update ingredient string
                     Ingredients[i] = $"{sQuantity} {unit} of {name}";
                 }
                 else
                 {
                     Console.WriteLine($"Invalid quantity in ingredient: {ingredient}");
                 }
+
+                Console.WriteLine("Recipe scaled successfully.");
+                Console.WriteLine("Scaled Recipe: \n**********************************************");
+                DisplayRecipe();
+                Console.WriteLine("**********************************************");
+
             }
+        }
 
-            Console.WriteLine("Recipe scaled successfully.");
-        
 
-    }
-       
 
-        
 
-    public void ResetQuantities()
+        public void ResetQuantities()
     {
             if(sFactor.Count == 0)
             {
@@ -150,13 +146,15 @@ namespace ST10320806_PROG6221_Part1.Classes
             }
 
             Console.WriteLine("Quantities reset successfully.");
+            Console.WriteLine("Reset Quantity: ");
+            DisplayRecipe();
         }
 
         public void ClearRecipes()
         {
             Ingredients.Clear();
             Steps.Clear();
-
+            Console.WriteLine("Recipe has been reset");
             addRecipe();
         }
     }
